@@ -1,0 +1,30 @@
+@import "~bootstrap/scss/bootstrap";
+
+#root {
+  height: 100vh;
+  display: flex;
+}
+
+.main {
+  width: 950px;
+  margin: auto;
+}
+
+.mt-10vh {
+  margin-top: 10vh;
+}
+
+.search-bar {
+  display: block;
+  margin: auto;
+}
+
+.search-btn {
+  margin-right: auto;
+}
+
+.spinner-grow {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+}
