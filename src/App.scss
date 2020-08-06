@@ -28,3 +28,10 @@
   width: 3rem;
   height: 3rem;
 }
+
+.recipeInList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 350px;
+}

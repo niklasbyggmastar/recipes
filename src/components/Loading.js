@@ -9,7 +9,7 @@ const Loading = ({ isLoading }) => {
                 <Spinner 
                     animation="grow" 
                     role="status" 
-                    variant="success">
+                    variant="info">
                 </Spinner>
             : "" }
         </div>
