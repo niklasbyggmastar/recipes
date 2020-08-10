@@ -1,14 +1,30 @@
 import React from "react";
 
-const Recipe = ({ data }) => {
+const Recipe = (props) => {
 
-    return (
-        <div className="col-md-4 my-4 recipeInList">
-            <img className="img img-thumbnail" src={data.image} alt={data.label} />
-            <h5 className="recipe-title">{ data.label }</h5>
+    console.log(props);
+    const data = props.location.query ? props.location.query.data : {};
+
+    return(
+        <div className="recipe-view mt-10vh">
+            <h1>{ data.label }</h1>
+            <hr />
+            <div className="row">
+                <div className="col">
+                    <ul>
+                        {data.ingredientLines && data.ingredientLines.length > 0 ? 
+                            data.ingredientLines.map((row, i) => (
+                                <li key={i}>{ row }</li>
+                            ))
+                        : ""}
+                    </ul>
+                </div>
+                <div className="col">
+                    <img src={data.image} alt={data.label} />
+                </div>
+            </div>
         </div>
     )
-
 }
 
 export default Recipe;

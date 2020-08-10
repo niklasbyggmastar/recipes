@@ -10,6 +10,10 @@
   margin: auto;
 }
 
+.recipe-view {
+  height: 100vh;
+}
+
 .mt-10vh {
   margin-top: 10vh;
 }
@@ -34,4 +38,18 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 350px;
+}
+
+.recipeInList:hover {
+  opacity: .7;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(150,150,150);
+  text-decoration: none;
 }

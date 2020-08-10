@@ -1,5 +1,5 @@
 import React from "react";
-import Recipe from './Recipe';
+import RecipeListItem from './RecipeListItem';
 
 const RecipeList = ({ recipes, searched, text }) => {
 
@@ -12,7 +12,7 @@ const RecipeList = ({ recipes, searched, text }) => {
             <div className="my-3 row">
                 { searched && recipes.length > 0 ? 
                     recipes.map((item, i) => (
-                        <Recipe data={item.recipe} key={i} />
+                        <RecipeListItem data={item.recipe} key={i} />
                     )) 
                 : searched && recipes.length === 0 ? <h5>No results</h5> : ""}
             </div>
