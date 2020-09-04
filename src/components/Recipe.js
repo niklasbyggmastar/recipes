@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const Recipe = (props) => {
 
     const [recipe, setRecipe] = useState({});
-    const baseUrl = "http://127.0.0.1:8000";
+    const baseUrl = "https://nmb-recipes.herokuapp.com";
 
     console.log(props);
 

@@ -11,7 +11,7 @@ const Searchbar = (props) => {
 	const [searched, setSearched] = useState(false);
 	const [isLoading, setLoading] = useState(false);
 
-    const baseUrl = "http://127.0.0.1:8000";
+    const baseUrl = "https://nmb-recipes.herokuapp.com";
     useEffect(() => {
         if (props.query && props.query.length > 0) {
             setQuery(props.query);
