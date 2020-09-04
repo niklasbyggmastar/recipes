@@ -14,7 +14,7 @@ const routing = (
 				<Switch>
 					<Route exact path="/" component={App} />
 					<Route path="/search" component={Search} />
-					<Route path="/recipe/:name" component={Recipe} />
+					<Route path="/recipe/:name/?:uri" component={Recipe} />
 				</Switch>
 			</div>
 		</Router>
