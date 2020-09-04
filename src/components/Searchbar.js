@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import apiKeys from "../assets/keys.json";
 import Loading from "./Loading";
 import { withRouter} from 'react-router-dom';
 
 const Searchbar = (props) => {
-
     const [recipes, setRecipes] = useState([]);
 	const [text, setText] = useState("");
 	const [query, setQuery] = useState("");
 	const [searched, setSearched] = useState(false);
 	const [isLoading, setLoading] = useState(false);
 
-    const APP_ID = apiKeys.appId;
-	const APP_KEY = apiKeys.appKey;
-    const baseUrl = "https://api.edamam.com/search";
-    
+    const baseUrl = "http://127.0.0.1:8000";
     useEffect(() => {
         if (props.query && props.query.length > 0) {
             setQuery(props.query);
@@ -33,8 +28,8 @@ const Searchbar = (props) => {
 
     const search = (query) => {
 		document.activeElement.blur();
-		setLoading(true);
-		fetch(`${baseUrl}?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`).then(result => {
+        setLoading(true);
+        fetch(`${baseUrl}/search?q=${query}`).then(result => {
 			result.json().then(data => {
 				console.log(data.hits);
 				setRecipes(data.hits);

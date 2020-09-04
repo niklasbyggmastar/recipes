@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import apiKeys from "../assets/keys.json";
 
 const Recipe = (props) => {
 
     const [recipe, setRecipe] = useState({});
-    const APP_ID = apiKeys.appId;
-	const APP_KEY = apiKeys.appKey;
-    const baseUrl = "https://api.edamam.com/search";
+    const baseUrl = "http://127.0.0.1:8000";
 
     console.log(props);
 
@@ -27,7 +24,7 @@ const Recipe = (props) => {
      * --> search by id somehow? https://developer.edamam.com/edamam-docs-recipe-api     
      */
     const fetchRecipe = async() => {
-        const data = await fetch(`${baseUrl}?r=${props.match.params.name}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+        const data = await fetch(`${baseUrl}/recipe?r=${props.match.params.name}`);
         const response = await data.json()
         return response.hits[0].recipe;
     }
